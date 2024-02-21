@@ -1,0 +1,88 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body bgcolor=orange>
+    <div class=background></div>
+    <form action="insert.php" method=POST>
+        <br>
+        <center><h1>SIGN-IN PAGE</h1></center>
+        <br><br>
+        <div class="formlabel">
+    <label for="fn">FIRSTNAME : </label>
+    <input type="text" id="fn" name="fn" required><BR><br>
+    <label for="ln">LASTNAME : </label>
+    <input type="text" id="ln" name="ln"><BR><br>
+    <label for="sn">STAFF ID : </label>
+    <input type="text" id="sn" name="sn" required><BR><br>
+      <label>SEX :</label>
+      <div class="radio-group">
+          <input type="radio" id="male" name="sex" value="male">
+          <label for="male">male</label>
+  
+          <input type="radio" id="female" name="sex" value="female">
+          <label for="female">female</label>
+      </div><label for="ei">EMAIL ID : </label>
+    <input type="email" id="ei" name="ei" required><BR><br>
+    <label for="pn">PHONE NO : </label>
+    <input type="number" id="pn" name="pn" minlength=10 maxlength=10 required><BR><br>
+    <label for="dp" required>DEPARTMENT : </label>
+    <select name="dp" id="dp">
+        <option>select an option</option>
+        <option value="IT">Department of Information Technology</option>
+        <option value="COMPUTER SCIENCE">Department of Computer Science</option>
+        <option value="ENGLISH">Department of English</option>
+        <option value="TAMIL">Department of Tamil</option>
+        <option value="PHYSICS">Department of Physics</option>
+        <option value="CHEMISTRY">Department of Chemistry</option>
+        <option value="MATHS">Department of Maths</option>
+        <option value="BCOM">Department of B.com</option>
+        <option value="DATA SCIENCE">Department of Data Science</option>
+        </select><BR><br>
+    <label for="at" required>ACADEMIC TITLE : </label>
+    <select name="at" id="at">
+        <option>select an option</option>
+        <option value="Professor">Professor</option>
+        <option value="Assistant Professor">Assistant Professor</option>
+        <option value="Associate Professor">Associate Professor</option>
+        <option value="Full Professor">Full Professor</option>
+        <option value="Research Assistant Professor">Research Assistant Professor</option>
+        <option value="Adjunct Professor">Adjunct Professor</option>
+        <option value="Lecturer">Lecturer</option>
+        <option value="Chancellor">Chancellor</option>
+        <option value="Instructor">Instructor</option>
+        <option value="Other Staffs">Other Staffs</option>
+    </select><BR><br>
+    <label for="pw">CREATE PASSWORD : </label>
+    <input type="PASSWORD" id="pw" name="pw" required><BR><br>
+    <label for="cpw">CONFIRM PASSWORD : </label>
+    <input type="PASSWORD" id="cpw" name="cpw" required>
+    <br>
+    <span id="passwordError" class="error-message"></span>
+    <BR><br>
+    <button id="submitButton" class="hidden">SUBMIT</button>
+    <BR><br>
+    </form>
+  </div>
+<script>
+    var passwordField = document.getElementById("pw");
+    var repasswordField = document.getElementById("cpw");
+    var passwordError = document.getElementById("passwordError");
+
+    repasswordField.addEventListener("input", function() {
+      if (pw.value !== cpw.value) {
+        submitButton.classList.add("hidden");
+        repasswordField.classList.add("mismatch");
+        passwordError.textContent = "Passwords do not match";
+      } 
+      else {
+        submitButton.classList.remove("hidden");
+        repasswordField.classList.remove("mismatch");
+        passwordError.textContent = " ";
+      }
+    });
+</script>
+</body>
+
+    
+        
+   
